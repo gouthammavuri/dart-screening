@@ -18,10 +18,13 @@
     "@angular/platform-browser": "~13.3.2",
     "@angular/platform-browser-dynamic": "~13.3.2",
     "@angular/router": "~13.3.2",
+    "bootstrap": "^4.6.1",
+    "jest-editor-support": "*",
+    "jquery": "^3.5.1",
+    "popper.js": "^1.16.1",
     "rxjs": "~6.6.0",
     "tslib": "^2.3.0",
-    "zone.js": "~0.11.4",
-    "jest-editor-support": "*"
+    "zone.js": "~0.11.4"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~13.3.2",

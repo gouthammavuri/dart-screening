@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\dart.screening.api\dart.screening.api.csproj" />
+    <ProjectReference Include="..\..\src\api\dart.screening.api\dart.screening.api.csproj" />
   </ItemGroup>
 
 </Project>
