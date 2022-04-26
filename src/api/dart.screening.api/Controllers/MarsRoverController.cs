@@ -25,7 +25,7 @@ namespace dart.screening.api.Controllers
         {
             try
             {
-                List<Tuple<string, bool, RoverPhotos?>> result = new List<Tuple<string, bool, RoverPhotos?>>();
+                List<Tuple<string, bool, Guid, RoverPhotos?>> result = new List<Tuple<string, bool, Guid, RoverPhotos?>>();
                 string[] inputDates = System.IO.File.ReadAllLines(@"Input.txt");
                 foreach (string inputDate in inputDates)
                 {
@@ -36,16 +36,16 @@ namespace dart.screening.api.Controllers
                         if (string.IsNullOrWhiteSpace(earthDate)
                             || !Regex.IsMatch(earthDate, @"^\d{4}\-(0?[1-9]|1[012])\-(0?[1-9]|[12][0-9]|3[01])$"))
                         {
-                            result.Add(new Tuple<string, bool, RoverPhotos?>(inputDate, false, null));
+                            result.Add(new Tuple<string, bool, Guid, RoverPhotos?>(inputDate, false, Guid.NewGuid(), null));
                             continue;
                         }
 
                         RoverPhotos? roverPhotos = await _marsRoverService.GetPhotosByDate(earthDate);
-                        result.Add(new Tuple<string, bool, RoverPhotos?>(inputDate, true, roverPhotos));
+                        result.Add(new Tuple<string, bool, Guid, RoverPhotos?>(inputDate, true, Guid.NewGuid(), roverPhotos));
                     }
                     else
                     {
-                        result.Add(new Tuple<string, bool, RoverPhotos?>(inputDate, false, null));
+                        result.Add(new Tuple<string, bool, Guid, RoverPhotos?>(inputDate, false, Guid.NewGuid(), null));
                     }
                 }
                 return new ObjectResult(result)

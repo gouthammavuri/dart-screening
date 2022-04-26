@@ -1,0 +1,52 @@
+<div class="card">
+  <div class="card-header" id="{{ marsRoverPhotoData.item3 }}">
+    <h2 class="mb-0">
+      <button
+        class="btn btn-link btn-block text-left"
+        type="button"
+        data-toggle="collapse"
+        [attr.data-target]="'#' + marsRoverPhotoData.item1"
+        aria-expanded="true"
+      >
+        Images for Input : {{ marsRoverPhotoData.item1 }}
+      </button>
+    </h2>
+  </div>
+
+  <div
+    [attr.id]="marsRoverPhotoData.item1"
+    class="collapse show p-3"
+    data-parent="#accordionExample"
+  >
+    <ng-container *ngIf="marsRoverPhotoData.item2">
+      <div class="row row-cols-1 row-cols-md-3">
+        <div
+          class="col mb-4"
+          *ngFor="let photo of marsRoverPhotoData.item4?.photos"
+        >
+          <div class="card">
+            <img [src]="photo.img_Src" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">{{ photo.camera.full_Name }}</h5>
+              <p class="card-text">
+                <span><strong>Id: </strong> {{ photo.id }}</span
+                ><br />
+                <span><strong>Name: </strong> {{ photo.camera.name }}</span
+                ><br />
+                <span
+                  ><strong>Full Name: </strong>
+                  {{ photo.camera.full_Name }}</span
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="!marsRoverPhotoData.item2">
+      <div class="alert alert-danger p-2" role="alert">
+        Invalid Input Date: {{ marsRoverPhotoData.item1 }}
+      </div>
+    </ng-container>
+  </div>
+</div>
