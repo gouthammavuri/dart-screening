@@ -12,6 +12,9 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dart.screening.api", "src\api\dart.screening.api\dart.screening.api.csproj", "{4AB2FD3C-A053-4300-89D3-F170617997A7}"
 EndProject
 Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "dart.screening.ui", "src\ui\dart.screening.ui\dart.screening.ui.esproj", "{963BC02D-C307-4F50-8183-4F948131402C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4AB2FD3C-A053-4300-89D3-F170617997A7} = {4AB2FD3C-A053-4300-89D3-F170617997A7}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dart.screening.core", "src\api\dart.screening.core\dart.screening.core.csproj", "{C7ABAE61-0BC4-4952-AF35-A3BF67BC7808}"
 EndProject
