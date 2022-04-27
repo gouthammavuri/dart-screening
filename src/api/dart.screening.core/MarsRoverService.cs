@@ -32,7 +32,7 @@ namespace dart.screening.core
                     }
                 };
 
-                var httpClient = _httpClientFactory.CreateClient();
+                var httpClient = _httpClientFactory.CreateClient("MarsRoverClient");
                 var httpResponseMessage = await httpClient.SendAsync(httpRequestMessage);
                 httpResponseMessage.EnsureSuccessStatusCode();
  
